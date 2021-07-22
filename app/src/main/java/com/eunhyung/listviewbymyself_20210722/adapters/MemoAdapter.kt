@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.eunhyung.listviewbymyself_20210722.R
 import com.eunhyung.listviewbymyself_20210722.datas.Memo
 import java.util.*
@@ -30,6 +31,16 @@ class MemoAdapter(
         }
 
         val row = tempRow!!
+
+        val memo = mList[position]
+
+        val contentTxt = row.findViewById<TextView>(R.id.contentTxt)
+        val dateTxt = row.findViewById<TextView>(R.id.dateTxt)
+        val simpleTxt = row.findViewById<TextView>(R.id.simpleTxt)
+
+        contentTxt.text = memo.content
+        dateTxt.text = memo.date
+        simpleTxt.text =memo.simpleView
 
         return row
 
